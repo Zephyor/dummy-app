@@ -13,7 +13,7 @@ node index.js
 
 Il s'agit d'une application web basique réalisée en NodeJS avec Express.
 
-* Vous devez **créer le Dockerfile** et **build l'image** pour lancer cette application.
+- Vous devez **créer le Dockerfile** et **build l'image** pour lancer cette application.
 
 Vous devez optimiser votre image pour que l'étape d'installation des dépendances soit supprimée du cache **seulement si** vous modifiez le contenu du fichier `package.json` ou `package-lock.json`.
 
@@ -21,8 +21,14 @@ Vous devez optimiser votre image pour que l'étape d'installation des dépendanc
 
 Une fois l'image créée vous pouvez découvrir les différents arguments disponibles pour créer et lancer un conteneur.
 
-* Vous devez lancer votre image afin d'accéder à l'application web **depuis votre navigateur sur votre hôte**.
+- Vous devez lancer votre image afin d'accéder à l'application web **depuis votre navigateur sur votre hôte**.
 
-* Vous devez modifier la variable d'environnement `PORT` pour lancer le conteneur de l'application web avec le port **1337** à l'écoute.
+- Vous devez modifier la variable d'environnement `PORT` pour lancer le conteneur de l'application web avec le port **1337** à l'écoute.
 
-* Vous devez modifier le hostname de votre conteneur pour le faire correspondre à : **mydocker**.
+- Vous devez modifier le hostname de votre conteneur pour le faire correspondre à : **mydocker**.
+
+Voici les commandes à lancer :
+
+docker build -t dummy_image .
+
+docker run -d -p 1337:1337 --name dummy_container --hostname mydocker dummy_image
